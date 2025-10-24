@@ -14,6 +14,10 @@ class Car {
   isFartherThan(maxDistanceCar) {
     return this.#position > maxDistanceCar.position;
   }
+
+  isEqualPosition(maxDistanceCar) {
+    return this.#position === maxDistanceCar.position;
+  }
 }
 
 export default Car;
