@@ -21,6 +21,18 @@ class RacingGame {
       }
     });
   }
+
+  findFarthestCar() {
+    let farthestCar = this.#cars[0];
+
+    this.#cars.forEach((car) => {
+      if (car.isFartherThan(farthestCar)) {
+        farthestCar = car;
+      }
+    });
+
+    return farthestCar;
+  }
 }
 
 export default RacingGame;
