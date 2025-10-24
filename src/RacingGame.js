@@ -33,6 +33,10 @@ class RacingGame {
 
     return farthestCar;
   }
+
+  getWinners(farthestCar) {
+    return this.#cars.filter((car) => car.isEqualPosition(farthestCar));
+  }
 }
 
 export default RacingGame;
