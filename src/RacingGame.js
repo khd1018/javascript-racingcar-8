@@ -26,7 +26,7 @@ class RacingGame {
     let farthestCar = this.#cars[0];
 
     this.#cars.forEach((car) => {
-      if (car.isFartherThan(farthestCar)) {
+      if (car.compareTo(farthestCar) > 0) {
         farthestCar = car;
       }
     });
@@ -35,7 +35,7 @@ class RacingGame {
   }
 
   getWinners(farthestCar) {
-    return this.#cars.filter((car) => car.isEqualPosition(farthestCar));
+    return this.#cars.filter((car) => car.compareTo(farthestCar) === 0);
   }
 }
 
