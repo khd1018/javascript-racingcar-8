@@ -11,12 +11,8 @@ class Car {
     this.#position++;
   }
 
-  isFartherThan(maxDistanceCar) {
-    return this.#position > maxDistanceCar.position;
-  }
-
-  isEqualPosition(maxDistanceCar) {
-    return this.#position === maxDistanceCar.position;
+  compareTo(farthestCar) {
+    return this.#position - farthestCar.position;
   }
 }
 
