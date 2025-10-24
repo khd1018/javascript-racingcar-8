@@ -10,6 +10,10 @@ class Car {
   move() {
     this.#position++;
   }
+
+  isFartherThan(maxDistanceCar) {
+    return this.#position > maxDistanceCar.position;
+  }
 }
 
-export default car;
+export default Car;
