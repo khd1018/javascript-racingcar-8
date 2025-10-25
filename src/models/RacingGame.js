@@ -10,7 +10,11 @@ class RacingGame {
     this.#cars = [...cars];
   }
 
-  #validate(finalRound) {}
+  #validate(finalRound) {
+    if (finalRound <= 0 || finalRound > 100) {
+      throw new Error("[ERROR] 시도할 횟수는 1이상 100이하 숫자만 입력해주세요.");
+    }
+  }
 
   run() {
     for (let round = 1; round <= this.#finalRound; round++) {
