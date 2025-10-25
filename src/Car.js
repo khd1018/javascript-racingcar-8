@@ -7,6 +7,14 @@ class Car {
     this.#position = startPosition;
   }
 
+  getName() {
+    return this.#name;
+  }
+
+  getPosition() {
+    return this.#position;
+  }
+
   move() {
     this.#position++;
   }
