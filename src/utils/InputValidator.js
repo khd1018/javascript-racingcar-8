@@ -11,7 +11,15 @@ class InputValidator {
     }
   }
 
-  checkDuplication(names) {
+  static checkDelimiter(userInput) {
+    const names = userInput.split(",");
+
+    if (names.length < 2) {
+      throw new Error("[ERROR] 이름을 쉼표(,)로 구분해서 입력해주세요. ");
+    }
+  }
+
+  static checkDuplication(names) {
     const nameSet = new Set(names);
 
     if (nameSet.size() !== names.length) {
@@ -19,13 +27,13 @@ class InputValidator {
     }
   }
 
-  checkMinimum(names) {
+  static checkMinimum(names) {
     if (names.length < 2) {
       throw new Error("[ERROR] 이름을 2개 이상 입력해주세요. ");
     }
   }
 
-  checkMaximum(names) {
+  static checkMaximum(names) {
     if (names.length > 100) {
       throw new Error("[ERROR] 이름을 2개 이상 입력해주세요. ");
     }
