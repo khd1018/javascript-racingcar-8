@@ -19,7 +19,13 @@ class InputValidator {
     }
   }
 
-  check;
+  checkMinimum(names) {
+    if (names.length < 2) {
+      throw new Error("[ERROR] 이름을 2개 이상 입력해주세요. ");
+    }
+  }
+
+  checkMaximum(name) {}
 }
 
 export default InputValidator;
