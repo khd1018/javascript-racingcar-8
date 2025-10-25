@@ -2,13 +2,18 @@ import { Random } from "@woowacourse/mission-utils";
 
 class RacingGame {
   #cars;
+  #finalRound;
 
-  constructor(cars) {
+  constructor(finalRound, cars) {
+    this.#validate(finalRound);
+    this.#finalRound = finalRound;
     this.#cars = [...cars];
   }
 
-  run(finalRound) {
-    for (let round = 1; round <= finalRound; round++) {
+  #validate(finalRound) {}
+
+  run() {
+    for (let round = 1; round <= this.#finalRound; round++) {
       const randomNumber = Random.pickNumberInRange(0, 9);
       this.playRound(randomNumber);
     }
