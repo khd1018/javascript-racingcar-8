@@ -1,7 +1,11 @@
 class InputValidator {
   static checkEmpty(userInput) {}
 
-  static checkInteger(userInput) {}
+  static checkNumber(userInput) {
+    if (!Number.isInteger(Number(userInput))) {
+      throw new Error("[ERROR] 숫자를 입력해주세요.");
+    }
+  }
 
   checkDuplication(names) {
     const nameSet = new Set(names);
