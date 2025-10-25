@@ -1,5 +1,9 @@
 class InputValidator {
-  static checkEmpty(userInput) {}
+  static checkEmpty(userInput) {
+    if (!userInput.length) {
+      throw new Error("[ERROR] 값을 입력해주세요.");
+    }
+  }
 
   static checkNumber(userInput) {
     if (!Number.isInteger(Number(userInput))) {
