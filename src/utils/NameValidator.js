@@ -18,6 +18,14 @@ class NameValidator {
       throw new Error("[ERROR] 이름을 100개 이하로 입력해주세요. ");
     }
   }
+
+  static checkEmptyString(names) {
+    names.forEach((name) => {
+      if (!name) {
+        throw new Error("[ERROR] 이름을 입력해주세요. ");
+      }
+    });
+  }
 }
 
 export default NameValidator;
