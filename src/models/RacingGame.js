@@ -17,14 +17,15 @@ class RacingGame {
   }
 
   run() {
-    for (let round = 1; round <= this.#finalRound; round++) {
-      const randomNumber = Random.pickNumberInRange(0, 9);
-      this.playRound(randomNumber);
+    for (let round = 0; round < this.#finalRound; round++) {
+      this.playRound();
     }
   }
 
-  playRound(randomNumber) {
+  playRound() {
     this.#cars.forEach((car) => {
+      const randomNumber = Random.pickNumberInRange(0, 9);
+
       if (randomNumber >= 4) {
         car.move();
       }
