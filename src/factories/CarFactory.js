@@ -1,4 +1,4 @@
-import Car from "../models/Car";
+import Car from "../models/Car.js";
 
 class CarFactory {
   static createCars(names) {

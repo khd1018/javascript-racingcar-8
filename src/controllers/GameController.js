@@ -1,7 +1,7 @@
-import InputValidator from "../utils/InputValidator";
-import NameValidator from "../utils/NameValidator";
-import RacingGame from "../models/RacingGame";
-import CarFactory from "../factories/CarFactory";
+import InputValidator from "../utils/InputValidator.js";
+import NameValidator from "../utils/NameValidator.js";
+import RacingGame from "../models/RacingGame.js";
+import CarFactory from "../factories/CarFactory.js";
 
 class GameController {
   #racingGame;
