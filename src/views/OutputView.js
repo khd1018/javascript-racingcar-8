@@ -1,20 +1,17 @@
 import { Console } from "@woowacourse/mission-utils";
 
 class OutputView {
-  static printResult(cars) {
+  static printResult(carStates) {
     Console.print("실행 결과");
 
-    cars.forEach((car) => {
-      const { name, position } = car.getStatus();
+    carStates.forEach((carState) => {
+      const { name, position } = carState;
       Console.print(`${name} : ${"-".repeat(position)}`);
     });
   }
 
-  static printWinners(cars) {
-    const winnerNames = cars.map((car) => {
-      const { name } = car.getStatus();
-      return name;
-    });
+  static printWinners(winningCars) {
+    const winnerNames = winningCars.map((winningCar) => winningCar.name);
 
     Console.print(`최종 우승자 : ${winnerNames.join(", ")}`);
   }
