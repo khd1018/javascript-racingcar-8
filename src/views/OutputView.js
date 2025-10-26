@@ -10,7 +10,14 @@ class OutputView {
     });
   }
 
-  static printWinners() {}
+  static printWinners(cars) {
+    const winnerNames = cars.map((car) => {
+      const { name } = car.getStatus();
+      return name;
+    });
+
+    Console.print(`최종 우승자 : ${winnerNames.join(", ")}`);
+  }
 }
 
 export default OutputView;
