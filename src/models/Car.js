@@ -14,7 +14,7 @@ class Car {
     }
   }
 
-  getStatus() {
+  getState() {
     return {
       name: this.#name,
       position: this.#position,
