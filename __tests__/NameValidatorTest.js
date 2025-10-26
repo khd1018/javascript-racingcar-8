@@ -18,4 +18,9 @@ describe("NameValidator 테스트", () => {
 
     expect(() => NameValidator.checkMaximum(names)).toThrow("[ERROR]");
   });
+
+  test("이름중에 빈 문자열이 있다면 Error를 발생시킬 수 있다.", () => {
+    const names = ["messi", "ronaldo", "", "carlos"];
+    expect(() => NameValidator.checkEmptyString(names)).toThrow("[ERROR]");
+  });
 });
