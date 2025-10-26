@@ -28,13 +28,13 @@ describe("RacingGame 테스트", () => {
   const farthestCar = racingGame.findFarthestCar();
 
   test("가장 멀리 이동한 자동차를 반환할 수 있다.", () => {
-    expect(farthestCar.getStatus()).toStrictEqual({ name: "messi", position: 1 });
+    expect(farthestCar.getState()).toStrictEqual({ name: "messi", position: 1 });
   });
 
   test("최종 우승한 자동차들을 반환할 수 있다.", () => {
     const winnerCars = racingGame.getWinners(farthestCar);
 
-    expect(winnerCars.map((car) => car.getStatus())).toStrictEqual([
+    expect(winnerCars).toStrictEqual([
       { name: "messi", position: 1 },
       { name: "son", position: 1 },
     ]);
