@@ -26,7 +26,7 @@ class Car {
   }
 
   compareTo(farthestCar) {
-    return this.#position - farthestCar.position;
+    return this.#position - farthestCar.#position;
   }
 }
 
