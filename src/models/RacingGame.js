@@ -11,7 +11,7 @@ class RacingGame {
   }
 
   getCarStates() {
-    return this.#cars.map((car) => car.getStatus());
+    return this.#cars.map((car) => car.getState());
   }
 
   #validate(finalRound) {
@@ -49,7 +49,8 @@ class RacingGame {
   }
 
   getWinners(farthestCar) {
-    return this.#cars.filter((car) => car.compareTo(farthestCar) === 0);
+    const winningCars = this.#cars.filter((car) => car.compareTo(farthestCar) === 0);
+    return winningCars.map((winningCar) => winningCar.getState());
   }
 }
 
