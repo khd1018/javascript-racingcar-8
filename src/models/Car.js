@@ -1,3 +1,6 @@
+import { ERROR_MESSAGE } from "../constants/messages.js";
+import { GAME_CONFIG } from "../constants/gameConfig.js";
+
 class Car {
   #name;
   #position;
@@ -9,8 +12,8 @@ class Car {
   }
 
   #validate(carName) {
-    if (carName.length > 5) {
-      throw new Error("[ERROR] 자동차 이름은 5자 이하만 가능합니다.");
+    if (carName.length > GAME_CONFIG.MAX_NAME_LENGTH) {
+      throw new Error(ERROR_MESSAGE.INVALID_NAME_LENGTH);
     }
   }
 

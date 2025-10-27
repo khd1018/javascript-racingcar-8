@@ -1,4 +1,6 @@
 import { Random } from "@woowacourse/mission-utils";
+import { ERROR_MESSAGE } from "../constants/messages.js";
+import { GAME_CONFIG } from "../constants/gameConfig.js";
 
 class RacingGame {
   #cars;
@@ -15,8 +17,8 @@ class RacingGame {
   }
 
   #validate(finalRound) {
-    if (finalRound <= 0 || finalRound > 100) {
-      throw new Error("[ERROR] 시도할 횟수는 1이상 100이하 숫자만 입력해주세요.");
+    if (finalRound < GAME_CONFIG.MIN_ROUND || finalRound > GAME_CONFIG.MAX_ROUND) {
+      throw new Error(ERROR_MESSAGE.INVALID_FINAL_ROUND);
     }
   }
 
@@ -28,9 +30,9 @@ class RacingGame {
 
   playRound() {
     this.#cars.forEach((car) => {
-      const randomNumber = Random.pickNumberInRange(0, 9);
+      const randomNumber = Random.pickNumberInRange(GAME_CONFIG.MIN_RANDOM, GAME_CONFIG.MAX_RANDOM);
 
-      if (randomNumber >= 4) {
+      if (randomNumber >= GAME_CONFIG.MOVE_THRESHOLD) {
         car.move();
       }
     });

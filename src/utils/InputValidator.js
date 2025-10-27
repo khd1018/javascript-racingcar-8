@@ -1,21 +1,24 @@
+import { ERROR_MESSAGE } from "../constants/messages.js";
+import { GAME_CONFIG } from "../constants/gameConfig.js";
+
 class InputValidator {
   static checkEmpty(userInput) {
     if (!userInput) {
-      throw new Error("[ERROR] 값을 입력해주세요.");
+      throw new Error(ERROR_MESSAGE.EMPTY_INPUT);
     }
   }
 
   static checkNumber(userInput) {
     if (!Number.isInteger(Number(userInput))) {
-      throw new Error("[ERROR] 숫자를 입력해주세요.");
+      throw new Error(ERROR_MESSAGE.NOT_A_NUMBER);
     }
   }
 
   static checkDelimiter(userInput) {
-    const names = userInput.split(",");
+    const names = userInput.split(GAME_CONFIG.NAME_DELIMITER);
 
-    if (names.length < 2) {
-      throw new Error("[ERROR] 이름을 쉼표(,)로 구분해서 입력해주세요. ");
+    if (names.length < GAME_CONFIG.MIN_NAME_COUNT) {
+      throw new Error(ERROR_MESSAGE.INVALID_DELIMITER);
     }
   }
 }

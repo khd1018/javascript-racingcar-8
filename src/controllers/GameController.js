@@ -2,6 +2,7 @@ import InputValidator from "../utils/InputValidator.js";
 import NameValidator from "../utils/NameValidator.js";
 import RacingGame from "../models/RacingGame.js";
 import CarFactory from "../factories/CarFactory.js";
+import { GAME_CONFIG } from "../constants/gameConfig.js";
 
 class GameController {
   #racingGame;
@@ -26,7 +27,7 @@ class GameController {
   }
 
   #parseNames(nameInput) {
-    const names = nameInput.split(",");
+    const names = nameInput.split(GAME_CONFIG.NAME_DELIMITER);
     this.#validateNames(names);
     return names;
   }
